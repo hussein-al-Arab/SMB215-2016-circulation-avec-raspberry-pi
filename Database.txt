@@ -10,6 +10,9 @@ CREATE TABLE `circulation`.`user` (
   UNIQUE INDEX `couriel_UNIQUE` (`couriel` ASC));
 
 
+ALTER TABLE `circulation`.`user` 
+ADD COLUMN `Administrator` TINYINT(1) NOT NULL AFTER `motdepasse`;
+
 
 CREATE TABLE `circulation`.`caza` (
   `idcaza` INT NOT NULL,
