@@ -34,3 +34,17 @@ CREATE TABLE `circulation`.`ville` (
     ON UPDATE NO ACTION);
 
 
+CREATE TABLE `circulation`.`route` (
+  `idroute` INT NOT NULL,
+  `Nom` VARCHAR(45) NOT NULL,
+  `ville` INT NULL,
+  PRIMARY KEY (`idroute`),
+  UNIQUE INDEX `idroute_UNIQUE` (`idroute` ASC),
+  INDEX `ville_idx` (`ville` ASC),
+  CONSTRAINT `ville`
+    FOREIGN KEY (`ville`)
+    REFERENCES `circulation`.`ville` (`idville`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
