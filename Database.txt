@@ -1,0 +1,36 @@
+CREATE SCHEMA `circulation` ;
+
+CREATE TABLE `circulation`.`user` (
+  `iduser` INT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(45) NOT NULL,
+  `couriel` VARCHAR(45) NOT NULL,
+  `motdepasse` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`iduser`),
+  UNIQUE INDEX `iduser_UNIQUE` (`iduser` ASC),
+  UNIQUE INDEX `couriel_UNIQUE` (`couriel` ASC));
+
+
+
+CREATE TABLE `circulation`.`caza` (
+  `idcaza` INT NOT NULL,
+  `caza` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idcaza`),
+  UNIQUE INDEX `idcaza_UNIQUE` (`idcaza` ASC),
+  UNIQUE INDEX `caza_UNIQUE` (`caza` ASC));
+
+
+
+CREATE TABLE `circulation`.`ville` (
+  `idville` INT NOT NULL,
+  `ville` VARCHAR(45) NOT NULL,
+  `caza` INT NULL,
+  PRIMARY KEY (`idville`),
+  UNIQUE INDEX `idville_UNIQUE` (`idville` ASC),
+  INDEX `caza_idx` (`caza` ASC),
+  CONSTRAINT `caza`
+    FOREIGN KEY (`caza`)
+    REFERENCES `circulation`.`caza` (`idcaza`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
