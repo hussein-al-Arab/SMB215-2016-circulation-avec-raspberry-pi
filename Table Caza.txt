@@ -1,0 +1,10 @@
+
+CREATE TABLE `circulation`.`caza` (
+  `idcaza` INT NOT NULL,
+  `caza` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idcaza`),
+  UNIQUE INDEX `idcaza_UNIQUE` (`idcaza` ASC),
+  UNIQUE INDEX `caza_UNIQUE` (`caza` ASC));
+
+
+

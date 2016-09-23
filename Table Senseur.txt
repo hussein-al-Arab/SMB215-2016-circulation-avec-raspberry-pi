@@ -1,0 +1,16 @@
+CREATE TABLE `circulation`.`senseur` (
+  `idsenseur` INT NOT NULL,
+  `Nom` VARCHAR(45) NULL,
+  `Place` VARCHAR(45) NULL,
+  `Route` INT NULL,
+  PRIMARY KEY (`idsenseur`),
+  UNIQUE INDEX `idsenseur_UNIQUE` (`idsenseur` ASC),
+  UNIQUE INDEX `Nom_UNIQUE` (`Nom` ASC),
+  INDEX `route_idx` (`Route` ASC),
+  CONSTRAINT `route`
+    FOREIGN KEY (`Route`)
+    REFERENCES `circulation`.`route` (`idroute`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+COMMENT = '	';
+

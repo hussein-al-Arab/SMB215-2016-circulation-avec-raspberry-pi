@@ -1,0 +1,13 @@
+CREATE TABLE `circulation`.`ville` (
+  `idville` INT NOT NULL,
+  `ville` VARCHAR(45) NOT NULL,
+  `caza` INT NULL,
+  PRIMARY KEY (`idville`),
+  UNIQUE INDEX `idville_UNIQUE` (`idville` ASC),
+  INDEX `caza_idx` (`caza` ASC),
+  CONSTRAINT `caza`
+    FOREIGN KEY (`caza`)
+    REFERENCES `circulation`.`caza` (`idcaza`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+

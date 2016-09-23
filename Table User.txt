@@ -1,0 +1,14 @@
+CREATE TABLE `circulation`.`user` (
+  `iduser` INT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(45) NOT NULL,
+  `couriel` VARCHAR(45) NOT NULL,
+  `motdepasse` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`iduser`),
+  UNIQUE INDEX `iduser_UNIQUE` (`iduser` ASC),
+  UNIQUE INDEX `couriel_UNIQUE` (`couriel` ASC));
+
+
+ALTER TABLE `circulation`.`user` 
+ADD COLUMN `Administrator` TINYINT(1) NOT NULL AFTER `motdepasse`;
+
+
