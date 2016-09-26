@@ -1,0 +1,5 @@
+Un fichier nommé « SensorName-Date-Time » qui contient les informations collectées du senseur de type CSV sera stocké dans un fichier sur RaspberryPI.
+Le fichier se synchronise avec Google drive ou Dropbox.
+Le serveur a encore un fichier synchronisé avec le même drive
+Un senseur sur le serveur va tirer les informations de ce fichier et les stocker dans la base de donné, sans arrêt et chaque 30 secondes.
+Le temps de collection des données est configurable par l’administrateur du système.
