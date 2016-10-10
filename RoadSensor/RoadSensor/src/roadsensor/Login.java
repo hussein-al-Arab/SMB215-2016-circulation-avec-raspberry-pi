@@ -7,8 +7,14 @@ package roadsensor;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
-
+import java.io.FileInputStream;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -55,7 +61,11 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        passwordtextfield.setText("jPasswordField1");
+        passwordtextfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordtextfieldActionPerformed(evt);
+            }
+        });
 
         cancelbutton.setText("Cancel");
         cancelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +126,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelbutton)
                     .addComponent(enterbutton))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -130,10 +140,7 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -144,6 +151,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_usernametextfieldActionPerformed
 
     private void cancelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbuttonActionPerformed
+close();
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelbuttonActionPerformed
 
@@ -167,10 +175,24 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_enterbuttonActionPerformed
 
+    private void passwordtextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordtextfieldActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_passwordtextfieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        File f=new File("");
+        
+        Workbook wb=Workbook.getWorkbook(f);
+        Sheet s=wb.getSheet(0);
+        int row=s.getRows();
+        int col=s.getColumns();
+        
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
