@@ -183,15 +183,7 @@ close();
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        File f=new File("");
-        
-        Workbook wb=Workbook.getWorkbook(f);
-        Sheet s=wb.getSheet(0);
-        int row=s.getRows();
-        int col=s.getColumns();
-        
-        
+    public static void main(String args[]) {       
         
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
