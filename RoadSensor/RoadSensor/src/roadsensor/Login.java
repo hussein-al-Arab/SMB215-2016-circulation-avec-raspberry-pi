@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jxl.read.biff.BiffException;
+import org.apache.poi.hssf.record.PageBreakRecord.Break;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -174,28 +175,20 @@ close();
             for (int i=0;i<row;i++){
                 for (int j=0; j<col;j++){
                     jxl.Cell c=s.getCell(j, i);
-                    System.out.print(c.getContents());
-                   System.out.print(password);
-                    
-                    System.out.print(c.getContents() + " ");
-                }
-                System.out.print("\n");
-            }
-       
-        
-        
-        if (password.contains("admin12")&& username.contains("admin")){
-            usernametextfield.setText("");
-            passwordtextfield.setText("");
-            close();
-            welcome w=new welcome();
-            w.setVisible(true);
-              
-        } else {
-            JOptionPane.showMessageDialog(null,"wrong passord","wrong password",JOptionPane.ERROR_MESSAGE);
-            passwordtextfield.setText("");
-            usernametextfield.setText("");
-        }
+                    if(c.getContents().equals(username) ){
+                        if(s.getCell(j+1, i).getContents().equals(password)){
+                            welcome w=new welcome();
+                            w.setVisible(true);
+                            break;
+                        } else {
+                            JOptionPane.showMessageDialog(null,"wrong password","wrong password",JOptionPane.ERROR_MESSAGE);
+                            passwordtextfield.setText("");
+                            usernametextfield.setText("");
+                            break;
+                        } 
+                    } 
+                } 
+            } 
         } catch (IOException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (BiffException ex) {
