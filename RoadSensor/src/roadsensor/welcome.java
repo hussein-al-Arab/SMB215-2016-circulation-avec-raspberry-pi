@@ -7,18 +7,23 @@ package roadsensor;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
+import javax.swing.JCheckBox;
 
 /**
  *
  * @author mlhit10
  */
 public class welcome extends javax.swing.JFrame {
-
     /**
      * Creates new form welcome
+     * @param S1
+     * @param S2
+     * @param S3
+     * @param S4
+     * @param S5
      */
-    public welcome() {
-        initComponents();
+    public welcome(String S1,String S2,String S3,String S4,String S5) {
+      initComponents();
     }
 
     /**
@@ -174,13 +179,17 @@ public class welcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) { 
+       // JCheckBox checkbox = new JCheckBox();
+        //boolean b = checkbox.isSelected();
+        //checkbox.setSelected(true);
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -207,7 +216,7 @@ public class welcome extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new welcome().setVisible(true);
+                new welcome("","","","","").setVisible(true);
             }
         });
     }

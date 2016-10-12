@@ -25,9 +25,15 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author mlhit10
  */
-public class Login extends javax.swing.JFrame {
 
-    /**
+
+public class Login extends javax.swing.JFrame {
+public String S1 = "";
+public String S2 = "";
+public String S3 = "";
+public String S4 = "";
+public String S5 = "";
+/**
      * Creates new form Login
      */
     public Login() {
@@ -177,7 +183,14 @@ close();
                     jxl.Cell c=s.getCell(j, i);
                     if(c.getContents().equals(username) ){
                         if(s.getCell(j+1, i).getContents().equals(password)){
-                            welcome w=new welcome();
+                            
+                            S1 = ""+s.getCell(j+3,i).getContents();
+                            S2 = ""+s.getCell(j+4,i).getContents();
+                            S3 = ""+s.getCell(j+5,i).getContents();
+                            S4 = ""+s.getCell(j+6,i).getContents();
+                            S5 = ""+s.getCell(j+7,i).getContents();
+                            System.out.print(S1+" "+S2+" "+S3+" "+S4+" "+S5+" \n");
+                            welcome w=new welcome(S1,S2,S3,S4,S5);
                             w.setVisible(true);
                             break;
                         } else {
@@ -207,7 +220,7 @@ close();
      */
     public static void main(String args[]) {       
            
-            /* Set the Nimbus look and feel */
+           /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
             * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
@@ -255,6 +268,8 @@ private void close(){
     WindowEvent winClosing = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
     Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosing);
 }
+
+
 
 
 }
