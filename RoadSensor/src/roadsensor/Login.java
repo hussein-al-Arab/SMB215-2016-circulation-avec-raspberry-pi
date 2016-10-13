@@ -33,6 +33,11 @@ public String S2 = "";
 public String S3 = "";
 public String S4 = "";
 public String S5 = "";
+public String S1Access = "";
+public String S2Access = "";
+public String S3Access = "";
+public String S4Access = "";
+public String S5Access = "";
 /**
      * Creates new form Login
      */
@@ -213,17 +218,21 @@ close();
             int colS3=sS3.getColumns();
             int colS4=sS4.getColumns();
             int colS5=sS5.getColumns();
+            
             for (int i=0;i<row;i++){
                 for (int j=0; j<col;j++){
                     jxl.Cell c=s.getCell(j, i);
                     if(c.getContents().equals(username) ){
                         if(s.getCell(j+1, i).getContents().equals(password)){
                             
-                            //S1 = ""+s.getCell(j+3,i).getContents();
-                            //S2 = ""+s.getCell(j+4,i).getContents();
-                            //S3 = ""+s.getCell(j+5,i).getContents();
-                            //S4 = ""+s.getCell(j+6,i).getContents();
-                            //S5 = ""+s.getCell(j+7,i).getContents();
+                            S1Access = ""+s.getCell(j+3,i).getContents();
+                            S2Access = ""+s.getCell(j+4,i).getContents();
+                            S3Access = ""+s.getCell(j+5,i).getContents();
+                            S4Access = ""+s.getCell(j+6,i).getContents();
+                            S5Access = ""+s.getCell(j+7,i).getContents();
+                            System.out.print(S1Access+" "+S2Access+" "+S3Access+" "+S4Access+" "+S5Access+" \n");
+                            
+                            
                              if( Double.valueOf(sS1.getCell(3,rowS1-1).getContents())<10 &&
                 Double.valueOf(sS1.getCell(3,rowS1-2).getContents())<10 &&
                 Double.valueOf(sS1.getCell(3,rowS1-3).getContents())<10 &&                 
@@ -265,7 +274,7 @@ close();
                    S5="False";    
                             } 
                             System.out.print(S1+" "+S2+" "+S3+" "+S4+" "+S5+" \n");
-                            welcome w=new welcome(S1,S2,S3,S4,S5);
+                            welcome w=new welcome(S1,S1Access,S2,S2Access,S3,S3Access,S4,S4Access,S5,S5Access);
                            w.setVisible(true);
                             break;
                         } else {

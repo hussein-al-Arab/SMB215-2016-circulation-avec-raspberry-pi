@@ -17,42 +17,67 @@ import javax.swing.JLabel;
  */
 public class welcome extends javax.swing.JFrame {
   
-    public welcome(String S1,String S2,String S3,String S4,String S5) {
+    public welcome(String S1,String S1Access,String S2,String S2Access,String S3,String S3Access,String S4,String S4Access,String S5,String S5Access) {
         initComponents();
+        if("true".equals(S1Access)){
         if("True".equals(S1)){
         jLabel9.setVisible(true);  
         jLabel8.setVisible(false);
         } else{
              jLabel9.setVisible(false);
              jLabel8.setVisible(true);
-        } 
+        }} else {
+        jLabel9.setVisible(false);
+        jLabel8.setVisible(false);
+        jLabel1.setVisible(false);
+        }
+        if("true".equals(S2Access)){
         if("True".equals(S2)){
         jLabel10.setVisible(true);  
         jLabel11.setVisible(false);
         } else{
              jLabel10.setVisible(false);
              jLabel11.setVisible(true);
-        } 
+        }} else{
+            jLabel10.setVisible(false);
+            jLabel11.setVisible(false);
+            jLabel2.setVisible(false);
+        }
+        if("true".equals(S3Access)){
         if("True".equals(S3)){
         jLabel13.setVisible(true);  
         jLabel12.setVisible(false);
         } else{
              jLabel13.setVisible(false);
              jLabel12.setVisible(true);
-        } 
+        }} else{
+            jLabel13.setVisible(false);
+            jLabel12.setVisible(false);
+            jLabel3.setVisible(false);
+        }
+        if("true".equals(S4Access)){
         if("True".equals(S4)){
         jLabel15.setVisible(true);  
         jLabel14.setVisible(false);
         } else{
              jLabel15.setVisible(false);
              jLabel14.setVisible(true);
-        } 
+        }} else {
+            jLabel15.setVisible(false);
+            jLabel14.setVisible(false);
+            jLabel4.setVisible(false);
+        }
+        if("true".equals(S5Access)){
         if("True".equals(S5)){
         jLabel16.setVisible(true);  
         jLabel17.setVisible(false);
         } else{
              jLabel16.setVisible(false);
              jLabel17.setVisible(true);
+        }}else {
+            jLabel16.setVisible(false);
+            jLabel17.setVisible(false);
+            jLabel5.setVisible(false);
         } 
     }
 
@@ -259,7 +284,7 @@ public class welcome extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new welcome("","","","","").setVisible(true);
+                new welcome("","","","","","","","","","").setVisible(true);
             }
         });
     }
