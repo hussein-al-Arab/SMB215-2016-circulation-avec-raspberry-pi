@@ -213,7 +213,24 @@ close();
             int colS3=sS3.getColumns();
             int colS4=sS4.getColumns();
             int colS5=sS5.getColumns();
-            JOptionPane.showMessageDialog(null,sS1.getCell(3,rowS1-1).getContents()+" , "+sS2.getCell(3,rowS2-1).getContents()+" , "+sS3.getCell(3,rowS3-1).getContents()+" , "+sS4.getCell(3,rowS4-1).getContents()+" , "+sS5.getCell(3,rowS5-1).getContents(),"S2: "+rowS2+", "+colS2,JOptionPane.ERROR_MESSAGE);
+            if( Double.valueOf(sS1.getCell(3,rowS1-1).getContents())<10 &&
+                    Double.valueOf(sS1.getCell(3,rowS1-2).getContents())<10 &&
+                    Double.valueOf(sS1.getCell(3,rowS1-3).getContents())<10 &&                 
+                    Double.valueOf(sS1.getCell(3,rowS1-4).getContents())<10) {
+                    JOptionPane.showMessageDialog(null,"True","True",JOptionPane.ERROR_MESSAGE);
+                } else {
+                   JOptionPane.showMessageDialog(null,"False","False",JOptionPane.ERROR_MESSAGE); 
+                             
+                            }       
+//if(sS1.getCell(3,rowS1-1).getContents()-sS1.getCell(3,rowS1-2).getContents()) 
+            
+            JOptionPane.showMessageDialog(null,
+               sS1.getCell(3,rowS1-1).getContents()+" , "
+              +sS2.getCell(3,rowS2-1).getContents()+" , "
+              +sS3.getCell(3,rowS3-1).getContents()+" , "
+              +sS4.getCell(3,rowS4-1).getContents()+" , "
+              +sS5.getCell(3,rowS5-1).getContents(),"S2: "
+              +rowS2+", "+colS2,JOptionPane.ERROR_MESSAGE);
             for (int i=0;i<row;i++){
                 for (int j=0; j<col;j++){
                     jxl.Cell c=s.getCell(j, i);
