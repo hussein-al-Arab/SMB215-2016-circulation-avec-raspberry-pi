@@ -213,38 +213,60 @@ close();
             int colS3=sS3.getColumns();
             int colS4=sS4.getColumns();
             int colS5=sS5.getColumns();
-            if( Double.valueOf(sS1.getCell(3,rowS1-1).getContents())<10 &&
-                    Double.valueOf(sS1.getCell(3,rowS1-2).getContents())<10 &&
-                    Double.valueOf(sS1.getCell(3,rowS1-3).getContents())<10 &&                 
-                    Double.valueOf(sS1.getCell(3,rowS1-4).getContents())<10) {
-                    JOptionPane.showMessageDialog(null,"True","True",JOptionPane.ERROR_MESSAGE);
-                } else {
-                   JOptionPane.showMessageDialog(null,"False","False",JOptionPane.ERROR_MESSAGE); 
-                             
-                            }       
-//if(sS1.getCell(3,rowS1-1).getContents()-sS1.getCell(3,rowS1-2).getContents()) 
-            
-            JOptionPane.showMessageDialog(null,
-               sS1.getCell(3,rowS1-1).getContents()+" , "
-              +sS2.getCell(3,rowS2-1).getContents()+" , "
-              +sS3.getCell(3,rowS3-1).getContents()+" , "
-              +sS4.getCell(3,rowS4-1).getContents()+" , "
-              +sS5.getCell(3,rowS5-1).getContents(),"S2: "
-              +rowS2+", "+colS2,JOptionPane.ERROR_MESSAGE);
             for (int i=0;i<row;i++){
                 for (int j=0; j<col;j++){
                     jxl.Cell c=s.getCell(j, i);
                     if(c.getContents().equals(username) ){
                         if(s.getCell(j+1, i).getContents().equals(password)){
                             
-                            S1 = ""+s.getCell(j+3,i).getContents();
-                            S2 = ""+s.getCell(j+4,i).getContents();
-                            S3 = ""+s.getCell(j+5,i).getContents();
-                            S4 = ""+s.getCell(j+6,i).getContents();
-                            S5 = ""+s.getCell(j+7,i).getContents();
+                            //S1 = ""+s.getCell(j+3,i).getContents();
+                            //S2 = ""+s.getCell(j+4,i).getContents();
+                            //S3 = ""+s.getCell(j+5,i).getContents();
+                            //S4 = ""+s.getCell(j+6,i).getContents();
+                            //S5 = ""+s.getCell(j+7,i).getContents();
+                             if( Double.valueOf(sS1.getCell(3,rowS1-1).getContents())<10 &&
+                Double.valueOf(sS1.getCell(3,rowS1-2).getContents())<10 &&
+                Double.valueOf(sS1.getCell(3,rowS1-3).getContents())<10 &&                 
+                Double.valueOf(sS1.getCell(3,rowS1-4).getContents())<10) {
+                    S1="True";
+                } else {
+                   S1="False";    
+                            }  
+            if( Double.valueOf(sS2.getCell(3,rowS2-1).getContents())<10 &&
+                Double.valueOf(sS2.getCell(3,rowS2-2).getContents())<10 &&
+                Double.valueOf(sS2.getCell(3,rowS2-3).getContents())<10 &&                 
+                Double.valueOf(sS2.getCell(3,rowS2-4).getContents())<10) {
+                    S2="True";
+                } else {
+                   S2="False";    
+                            } 
+            if( Double.valueOf(sS3.getCell(3,rowS3-1).getContents())<10 &&
+                Double.valueOf(sS3.getCell(3,rowS3-2).getContents())<10 &&
+                Double.valueOf(sS3.getCell(3,rowS3-3).getContents())<10 &&                 
+                Double.valueOf(sS3.getCell(3,rowS3-4).getContents())<10) {
+                    S3="True";
+                } else {
+                   S3="False";    
+                            } 
+            if( Double.valueOf(sS4.getCell(3,rowS4-1).getContents())<10 &&
+                Double.valueOf(sS4.getCell(3,rowS4-2).getContents())<10 &&
+                Double.valueOf(sS4.getCell(3,rowS4-3).getContents())<10 &&                 
+                Double.valueOf(sS4.getCell(3,rowS4-4).getContents())<10) {
+                    S4="True";
+                } else {
+                   S4="False";    
+                            } 
+            if( Double.valueOf(sS5.getCell(3,rowS5-1).getContents())<10 &&
+                Double.valueOf(sS5.getCell(3,rowS5-2).getContents())<10 &&
+                Double.valueOf(sS5.getCell(3,rowS5-3).getContents())<10 &&                 
+                Double.valueOf(sS5.getCell(3,rowS5-4).getContents())<10) {
+                    S5="True";
+                } else {
+                   S5="False";    
+                            } 
                             System.out.print(S1+" "+S2+" "+S3+" "+S4+" "+S5+" \n");
                             welcome w=new welcome(S1,S2,S3,S4,S5);
-                            w.setVisible(true);
+                           w.setVisible(true);
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null,"wrong password","wrong password",JOptionPane.ERROR_MESSAGE);

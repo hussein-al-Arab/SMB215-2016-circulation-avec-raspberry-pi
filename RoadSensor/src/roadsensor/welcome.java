@@ -19,35 +19,35 @@ public class welcome extends javax.swing.JFrame {
   
     public welcome(String S1,String S2,String S3,String S4,String S5) {
         initComponents();
-        if("true".equals(S1)){
+        if("True".equals(S1)){
         jLabel9.setVisible(true);  
         jLabel8.setVisible(false);
         } else{
              jLabel9.setVisible(false);
              jLabel8.setVisible(true);
         } 
-        if("true".equals(S2)){
+        if("True".equals(S2)){
         jLabel10.setVisible(true);  
         jLabel11.setVisible(false);
         } else{
              jLabel10.setVisible(false);
              jLabel11.setVisible(true);
         } 
-        if("true".equals(S3)){
+        if("True".equals(S3)){
         jLabel13.setVisible(true);  
         jLabel12.setVisible(false);
         } else{
              jLabel13.setVisible(false);
              jLabel12.setVisible(true);
         } 
-        if("true".equals(S4)){
+        if("True".equals(S4)){
         jLabel15.setVisible(true);  
         jLabel14.setVisible(false);
         } else{
              jLabel15.setVisible(false);
              jLabel14.setVisible(true);
         } 
-        if("true".equals(S5)){
+        if("True".equals(S5)){
         jLabel16.setVisible(true);  
         jLabel17.setVisible(false);
         } else{
