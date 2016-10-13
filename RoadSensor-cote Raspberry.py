@@ -35,7 +35,7 @@ while True:
     else:
          print "Out Of Range"                   #display out of range
     time.sleep(0.0)
-    f=open("/home/pi/Downloads/RaspberryPi.zip","w")
+    f=open("/home/pi/Desktop/fiche","w")
     f.write("AAAAAAAAAAAA: %s\n" %distance)
     #print distance
     f.close()
