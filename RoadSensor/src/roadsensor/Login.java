@@ -230,7 +230,7 @@ close();
                             S3Access = ""+s.getCell(j+5,i).getContents();
                             S4Access = ""+s.getCell(j+6,i).getContents();
                             S5Access = ""+s.getCell(j+7,i).getContents();
-                            System.out.print(S1Access+" "+S2Access+" "+S3Access+" "+S4Access+" "+S5Access+" \n");
+                            System.out.print("Priviliges: "+S1Access+" "+S2Access+" "+S3Access+" "+S4Access+" "+S5Access+" \n");
                             
                             
                              if( Double.valueOf(sS1.getCell(3,rowS1-1).getContents())<10 &&
@@ -273,7 +273,7 @@ close();
                 } else {
                    S5="False";    
                             } 
-                            System.out.print(S1+" "+S2+" "+S3+" "+S4+" "+S5+" \n");
+                            System.out.print("Status: "+S1+" "+S2+" "+S3+" "+S4+" "+S5+" \n");
                             welcome w=new welcome(S1,S1Access,S2,S2Access,S3,S3Access,S4,S4Access,S5,S5Access);
                            w.setVisible(true);
                             break;
