@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jxl.read.biff.BiffException;
-import org.apache.poi.hssf.record.PageBreakRecord.Break;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -25,20 +24,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author mlhit10
  */
-
-
 public class Login extends javax.swing.JFrame {
-public String S1 = "";
-public String S2 = "";
-public String S3 = "";
-public String S4 = "";
-public String S5 = "";
-public String S1Access = "";
-public String S2Access = "";
-public String S3Access = "";
-public String S4Access = "";
-public String S5Access = "";
-/**
+
+    /**
      * Creates new form Login
      */
     public Login() {
@@ -177,115 +165,37 @@ close();
         String username = usernametextfield.getText();
         try {  
             File f;
-            File S1Doc;
-            File S2Doc;
-            File S3Doc;
-            File S4Doc;
-            File S5Doc;
             f=new File("C:\\Users\\mlhit10\\Desktop\\SensorData\\Users.xls");
-            S1Doc = new File ("C:\\Users\\mlhit10\\Desktop\\SensorData\\S1.xls");
-            S2Doc = new File ("C:\\Users\\mlhit10\\Desktop\\SensorData\\S2.xls");
-            S3Doc = new File ("C:\\Users\\mlhit10\\Desktop\\SensorData\\S3.xls");
-            S4Doc = new File ("C:\\Users\\mlhit10\\Desktop\\SensorData\\S4.xls");
-            S5Doc = new File ("C:\\Users\\mlhit10\\Desktop\\SensorData\\S5.xls");
             jxl.Workbook wb;
-            jxl.Workbook wbS1;
-            jxl.Workbook wbS2;
-            jxl.Workbook wbS3;
-            jxl.Workbook wbS4;
-            jxl.Workbook wbS5;
             wb=jxl.Workbook.getWorkbook(f);
-            wbS1=jxl.Workbook.getWorkbook(S1Doc);
-            wbS2=jxl.Workbook.getWorkbook(S2Doc);
-            wbS3=jxl.Workbook.getWorkbook(S3Doc);
-            wbS4=jxl.Workbook.getWorkbook(S4Doc);
-            wbS5=jxl.Workbook.getWorkbook(S5Doc);
             jxl.Sheet s=wb.getSheet(0);
-            jxl.Sheet sS1=wbS1.getSheet(0);
-            jxl.Sheet sS2=wbS2.getSheet(0);
-            jxl.Sheet sS3=wbS3.getSheet(0);
-            jxl.Sheet sS4=wbS4.getSheet(0);
-            jxl.Sheet sS5=wbS5.getSheet(0);
             int row=s.getRows();
-            int rowS1=sS1.getRows();
-            int rowS2=sS2.getRows();
-            int rowS3=sS3.getRows();
-            int rowS4=sS4.getRows();
-            int rowS5=sS5.getRows();
             int col=s.getColumns();
-            int colS1=sS1.getColumns();
-            int colS2=sS2.getColumns();
-            int colS3=sS3.getColumns();
-            int colS4=sS4.getColumns();
-            int colS5=sS5.getColumns();
-            
             for (int i=0;i<row;i++){
                 for (int j=0; j<col;j++){
                     jxl.Cell c=s.getCell(j, i);
-                    if(c.getContents().equals(username) ){
-                        if(s.getCell(j+1, i).getContents().equals(password)){
-                            
-                            S1Access = ""+s.getCell(j+3,i).getContents();
-                            S2Access = ""+s.getCell(j+4,i).getContents();
-                            S3Access = ""+s.getCell(j+5,i).getContents();
-                            S4Access = ""+s.getCell(j+6,i).getContents();
-                            S5Access = ""+s.getCell(j+7,i).getContents();
-                            System.out.print("Priviliges: "+S1Access+" "+S2Access+" "+S3Access+" "+S4Access+" "+S5Access+" \n");
-                            
-                            
-                             if( Double.valueOf(sS1.getCell(3,rowS1-1).getContents())<10 &&
-                Double.valueOf(sS1.getCell(3,rowS1-2).getContents())<10 &&
-                Double.valueOf(sS1.getCell(3,rowS1-3).getContents())<10 &&                 
-                Double.valueOf(sS1.getCell(3,rowS1-4).getContents())<10) {
-                    S1="True";
-                } else {
-                   S1="False";    
-                            }  
-            if( Double.valueOf(sS2.getCell(3,rowS2-1).getContents())<10 &&
-                Double.valueOf(sS2.getCell(3,rowS2-2).getContents())<10 &&
-                Double.valueOf(sS2.getCell(3,rowS2-3).getContents())<10 &&                 
-                Double.valueOf(sS2.getCell(3,rowS2-4).getContents())<10) {
-                    S2="True";
-                } else {
-                   S2="False";    
-                            } 
-            if( Double.valueOf(sS3.getCell(3,rowS3-1).getContents())<10 &&
-                Double.valueOf(sS3.getCell(3,rowS3-2).getContents())<10 &&
-                Double.valueOf(sS3.getCell(3,rowS3-3).getContents())<10 &&                 
-                Double.valueOf(sS3.getCell(3,rowS3-4).getContents())<10) {
-                    S3="True";
-                } else {
-                   S3="False";    
-                            } 
-            if( Double.valueOf(sS4.getCell(3,rowS4-1).getContents())<10 &&
-                Double.valueOf(sS4.getCell(3,rowS4-2).getContents())<10 &&
-                Double.valueOf(sS4.getCell(3,rowS4-3).getContents())<10 &&                 
-                Double.valueOf(sS4.getCell(3,rowS4-4).getContents())<10) {
-                    S4="True";
-                } else {
-                   S4="False";    
-                            } 
-            if( Double.valueOf(sS5.getCell(3,rowS5-1).getContents())<10 &&
-                Double.valueOf(sS5.getCell(3,rowS5-2).getContents())<10 &&
-                Double.valueOf(sS5.getCell(3,rowS5-3).getContents())<10 &&                 
-                Double.valueOf(sS5.getCell(3,rowS5-4).getContents())<10) {
-                    S5="True";
-                } else {
-                   S5="False";    
-                            } 
-                            System.out.print("Status: "+S1+" "+S2+" "+S3+" "+S4+" "+S5+" \n");
-                            welcome w=new welcome(S1,S1Access,S2,S2Access,S3,S3Access,S4,S4Access,S5,S5Access);
-                           w.setVisible(true);
-                            break;
-                        } else {
-                            JOptionPane.showMessageDialog(null,"wrong password","wrong password",JOptionPane.ERROR_MESSAGE);
-                            passwordtextfield.setText("");
-                            usernametextfield.setText("");
-                            break;
-                        } 
-                    } 
-                } 
-            } 
+                    System.out.print(c.getContents());
+                   System.out.print(password);
+                    
+                    System.out.print(c.getContents() + " ");
+                }
+                System.out.print("\n");
+            }
+       
+        
+        
+        if (password.contains("admin12")&& username.contains("admin")){
+            usernametextfield.setText("");
+            passwordtextfield.setText("");
+            close();
+            welcome w=new welcome();
+            w.setVisible(true);
+              
+        } else {
+            JOptionPane.showMessageDialog(null,"wrong passord","wrong password",JOptionPane.ERROR_MESSAGE);
+            passwordtextfield.setText("");
+            usernametextfield.setText("");
+        }
         } catch (IOException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (BiffException ex) {
@@ -304,7 +214,7 @@ close();
      */
     public static void main(String args[]) {       
            
-           /* Set the Nimbus look and feel */
+            /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
             * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
@@ -352,8 +262,6 @@ private void close(){
     WindowEvent winClosing = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
     Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosing);
 }
-
-
 
 
 }
